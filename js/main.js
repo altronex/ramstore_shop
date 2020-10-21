@@ -51,4 +51,10 @@ $(function () {
     $('.catalog__filters-btngrid').removeClass('catalog__filters-button--active');
     $('.product-item__wrapper').addClass('product-item__wrapper--list');
   });
+
+  $(".rate-yo").rateYo({
+    rating: 5,
+    ratedFill: "#fb3838",
+    spacing: "10px"
+  });
 });

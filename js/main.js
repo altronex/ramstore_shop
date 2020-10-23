@@ -4,16 +4,26 @@ $(function () {
     dots: true,
     prevArrow: '<button class="banner-section__slider-btn banner-section__slider-btnprev"><img src="img/arrow-left.svg" alt=""></button>',
     nextArrow: '<button class="banner-section__slider-btn banner-section__slider-btnnext"><img src="img/arrow-right.svg" alt=""></button>',
+    responsive: [
+      {
+        breakpoint: 969,
+        settings: {
+          arrows: false
+        }
+      }
+    ]
   });
 
   $('.tab').on('click', function(e){
       e.preventDefault();
 
       $($(this).siblings()).removeClass('tab--active');
-      $($(this).parent().siblings().find('div')).removeClass('tabs-content--active');
+      $($(this).closest('.tabs-wrapper').siblings().find('div')).removeClass('tabs-content--active');
 
       $(this).addClass('tab--active');
       $($(this).attr('href')).addClass('tabs-content--active');
+
+      $('.product-slider').slick('setPosition');
   });
 
   $('.product-item__favourite').on('click', function(){
@@ -25,6 +35,36 @@ $(function () {
     slidesToScroll: 1,
     prevArrow: '<button class="product-slider__slider-btn product-slider__slider-btnprev"><img src="img/arrow-black-left.svg" alt=""></button>',
     nextArrow: '<button class="product-slider__slider-btn product-slider__slider-btnnext"><img src="img/arrow-black-right.svg" alt=""></button>',
+    responsive: [
+      {
+        breakpoint: 1301,
+        settings: {
+          arrows: false,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1201,
+        settings: {
+          slidesToShow: 3,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 870,
+        settings: {
+          slidesToShow: 2,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          dots: true
+        }
+      }
+    ]
   });
 
   $('.filter-style').styler();
@@ -56,5 +96,18 @@ $(function () {
     rating: 5,
     ratedFill: "#fb3838",
     spacing: "10px"
+  });
+
+  $(".menu__btn").on('click', function(){
+    $('.menu-mobile__list').toggleClass('menu-mobile__list--active')
+  });
+  
+  $('.footer__topdrop').on('click', function(){
+    $(this).next().slideToggle();
+    $(this).toggleClass('footer__topdrop--active');
+  });
+
+  $('.aside__btn').on('click', function(){
+    $(this).next().slideToggle();
   });
 });

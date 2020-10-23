@@ -27,6 +27,8 @@ body {
   font-weight: 400;
   line-height: 24px;
   font-size: 18px;
+  overflow-x: hidden;
+  min-width: 320px;
 }
 .container {
   max-width: 1200px;
@@ -102,8 +104,8 @@ body {
   background-color: #fb3838;
   border-radius: 50%;
   text-align: center;
-  bottom: -14px;
-  right: -14px;
+  bottom: -2px;
+  right: -13px;
 }
 .header__bottom {
   margin-bottom: 80px;
@@ -123,6 +125,38 @@ body {
 }
 .menu-categories__link:hover {
   color: #000;
+}
+.menu__btn {
+  display: none;
+}
+.menu-mobile__list{
+  width: 243px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  transform: translateX(-100%);
+  transition: all .3s;
+  position: absolute;
+  z-index: 10;
+  background-color: #ffffff;
+}
+.menu-mobile__list--active {
+  transform: translateX(0%);
+}
+.menu-mobile__link {
+  display: block;
+  padding-left: 53px;
+  padding-top: 36px;
+}
+.menu-mobile__img {
+  position: absolute;
+  left: 11px;
+  bottom: 0;
+}
+.menu__mobile-linewrapper {
+  display: none;
+}
+.menu-mobile__item {
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0, 0.1);
 }
 .menu-categories__link {
   transition: all .3s;
@@ -197,9 +231,10 @@ body {
   border-radius: 50%;
   background-color: transparent;
 }
-.slick-active li button {
+.slick-dots .slick-active button {
   background-color: #fff;
 }
+
 .sale-item {
   max-width: 265px;
   text-align: center;
@@ -1197,8 +1232,8 @@ button.catalog__filters-btnline {
   line-height: 18px;
   font-size: 15px;
   color: #fb3838;
-
 }
+
 .product-card__price-new {
   font-weight: bold;
   font-size: 40px;
@@ -1211,6 +1246,9 @@ button.catalog__filters-btnline {
   font-size: 30px;
   line-height: 36px;
   margin-bottom: 10px;
+}
+.aside__btn{
+  display: none;
 }
 .product-card__code{
   font-size: 15px;
@@ -1365,4 +1403,19 @@ button.catalog__filters-btnline {
   background-color: #fb3838;
   border-radius: 3px;
   border: none;
+}
+.product-slider .slick-dots {
+  bottom: -30px;
+}
+.product-slider .slick-dots button {
+  background-color: #C4C4C4;
+}
+.product-slider .slick-dots .slick-active button {
+  background-color: #fb3838;
+}
+.product-card__btn-mobile {
+  display: none;
+}
+.footer__topdrop {
+  pointer-events: none;
 }
